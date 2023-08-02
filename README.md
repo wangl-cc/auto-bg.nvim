@@ -8,7 +8,7 @@ when system theme changes (only works on macOS now).
 Use your favorite plugin manager, for example, with `lazy.nvim`:
 
 ```lua
-use {
+{
   'wangl-cc/auto-bg.nvim',
   event = 'UIEnter',
   opts = {},
