@@ -16,17 +16,24 @@ Use your favorite plugin manager, for example, with `lazy.nvim`:
 }
 ```
 
+## Requirements
+
+### macOS
+
+- make: build system;
+- swiftc: build the swift code to detect system theme changes;
+
 ## Options
 
 ```lua
 {
   dark = {
-    pre = fun(): nil, -- function executed before set background to dark
-    post = fun(): nil, -- function executed after set background to dark
+    pre = fun(): nil, -- function called before set background to dark
+    post = fun(): nil, -- function called after set background to dark
   },
   light = {
-    pre = fun(): nil, -- function executed before set background to light
-    post = fun(): nil, -- function executed after set background to light
+    pre = fun(): nil, -- function called before set background to light
+    post = fun(): nil, -- function called after set background to light
   },
 }
 ```
