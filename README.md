@@ -11,7 +11,23 @@ Use your favorite plugin manager, for example, with `lazy.nvim`:
 {
   'wangl-cc/auto-bg.nvim',
   event = 'UIEnter',
+  build = 'make',
   opts = {},
+}
+```
+
+## Options
+
+```lua
+{
+  dark = {
+    pre = fun(): nil, -- function executed before set background to dark
+    post = fun(): nil, -- function executed after set background to dark
+  },
+  light = {
+    pre = fun(): nil, -- function executed before set background to light
+    post = fun(): nil, -- function executed after set background to light
+  },
 }
 ```
 
