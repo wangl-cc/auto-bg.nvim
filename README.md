@@ -11,17 +11,9 @@ Use your favorite plugin manager, for example, with `lazy.nvim`:
 {
   'wangl-cc/auto-bg.nvim',
   event = 'UIEnter',
-  build = 'make',
   opts = {},
 }
 ```
-
-## Requirements
-
-### macOS
-
-- make: build system;
-- swiftc: build the swift code to detect system theme changes;
 
 ## Options
 

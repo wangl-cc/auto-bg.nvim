@@ -43,15 +43,17 @@ function M.setup(opts)
   if M.job then return end
 
   if vim.loop.os_uname().sysname == "Darwin" then
-    local exe = vim.fn.globpath(vim.o.rtp, "build/watcher")
+    local exe = vim.fn.globpath(vim.o.rtp, "build/watcher-macos")
     M.job = vim.fn.jobstart(exe, {
       on_stdout = function(_, data, _)
         ---@type BackgroundEnum
         local bg = data[1]
         M.switch(bg)
       end,
-      on_stderr = function(_, data, _)
-        vim.notify(vim.inspect(data), vim.log.levels.ERROR, { title = "auto-bg" })
+      on_stderr = function(_, _, _)
+        vim.notify("Failed to launch watcher", vim.log.levels.ERROR, {
+          title = "auto-bg",
+        })
       end,
     })
   end
