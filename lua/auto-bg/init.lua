@@ -43,7 +43,7 @@ function M.setup(opts)
   if M.job then return end
 
   if vim.loop.os_uname().sysname == "Darwin" then
-    local exe = vim.fn.globpath(vim.o.rtp, "build/watcher-macos")
+    local exe = vim.fn.globpath(vim.o.rtp, "build/watcher-universal-macos")
     M.job = vim.fn.jobstart(exe, {
       on_stdout = function(_, data, _)
         ---@type BackgroundEnum
