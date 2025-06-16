@@ -22,7 +22,7 @@ function M.switch(bg)
     vim.o.background = bg
     return
   end
-  if switcher.pre and switcher.pre then switcher.pre() end
+  if switcher.pre then switcher.pre() end
   vim.o.background = bg
   if switcher.post then switcher.post() end
 end
